@@ -15,7 +15,7 @@ export LAUNCHDARKLY_SDK_KEY=YOUR_KEY
 1. Start the server: node migration.js
 2. Emulate traffic with k6: k6 run test.js
 
-> Note: This example may not be the most cost-effective and should not be used in a production environment.
+> Note: This example may not be the most cost-effective and should be used with caution in a production environment.
 
 ### Insights
 
