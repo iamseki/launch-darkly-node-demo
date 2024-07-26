@@ -7,16 +7,16 @@ app.use(express.json());
 
 const port = 3000
 
-app.post('/migration', async (req, res) => {
+app.post('/hello-world', async (req, res) => {
   const user = req.body;
   const context = {
-    "kind": 'user',
+    "kind": 'user', // this can be anything we want, such as userId or orgId depends on how we want to segregate
     "key": `${user.id}`, // must be a string
     ...user, // custom properties such as orgId, portfolioId
   };
 
   console.log(context);
-  
+
   const data = await launchDarkly.helloWorldMigration.read(launchDarkly.flags.helloWorldMigrationFlag, context, launchDarkly.helloWorldMigrationFallbackStage);
 
   res.send(data);

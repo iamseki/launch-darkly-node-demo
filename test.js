@@ -4,7 +4,7 @@ import { randomItem } from 'https://jslib.k6.io/k6-utils/1.1.0/index.js';
 
 export const options = {
   vus: 2,
-  duration: '60s',
+  duration: '360s',
 };
 
 const users = [
@@ -41,7 +41,7 @@ const users = [
 ]
 
 export default function () {
-  const url = 'http://localhost:3000/migration';
+  const url = 'http://localhost:3000/hello-world';
 
   const user = randomItem(users);
   const payload = JSON.stringify(user);
